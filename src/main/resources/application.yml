@@ -31,8 +31,8 @@ spring:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     druid:
       url: jdbc:oracle:thin:@localhost:1521:orcl
-      username: ***
-      password: ***
+      username: c##fast
+      password: stt_2018
       initial-size: 10
       min-idle: 5
       max-active: 50
@@ -51,7 +51,7 @@ spring:
       #statview
       stat-view-servlet.enabled: true
       stat-view-servlet.allow: 127.0.0.1
-      stat-view-servlet.deny: ***.***.***.***
+      stat-view-servlet.deny: 192.168.0.10
       stat-view-servlet.login-username: root
       stat-view-servlet.login-password: root
       stat-view-servlet.reset-enable: false

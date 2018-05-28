@@ -44,7 +44,6 @@
     <logger name="org.springframework" level="INFO"/>
     <logger name="com.stt" level="DEBUG"/>
     <root level="INFO">
-        <!--<appender-ref ref="STDOUT"/>-->
         <appender-ref ref="INFO_FILE"/>
         <appender-ref ref="ERROR_FILE"/>
     </root>

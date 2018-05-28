@@ -3,16 +3,13 @@ package com.stt;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.stt.mapper.DemoMapper;
-import com.stt.mapper.PureUserMapper;
 import com.stt.po.Demo;
-import com.stt.po.PureUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -24,8 +21,6 @@ import java.util.List;
 public class SpringbootMybatisOracleDemoApplicationTest {
 
     @Autowired
-    private PureUserMapper pureUserMapper;
-    @Autowired
     private DemoMapper demoMapper;
 
     @Test
@@ -36,20 +31,11 @@ public class SpringbootMybatisOracleDemoApplicationTest {
         add("stt");
         findAll();
         //删除数据
-        deleteById(Short.parseShort("2"));
+        deleteById((short)2);
         findAll();
         //修改数据
-        updateById(Short.parseShort("1"),"tt");
+        updateById((short)1,"tt");
         findAll();
-    }
-
-    @Test
-    public void findByUserId() {
-        PureUser pureUser = pureUserMapper.selectByPrimaryKey(new BigDecimal(1));
-//        pureUser.setSex();
-        System.out.println("User ID = " + pureUser.getUserId());
-        System.out.println("User name = " + pureUser.getUserName());
-        System.out.println("--------------------------");
     }
 
     /**
