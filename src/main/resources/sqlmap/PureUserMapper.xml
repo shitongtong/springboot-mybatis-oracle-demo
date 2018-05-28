@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stt.mapper.PureUserMapper">
+    <resultMap id="PureUserResultMap" type="com.stt.po.PureUser">
+        <id column="USER_ID" jdbcType="NUMERIC" property="userId" />
+        <result column="LOGIN_ID" jdbcType="VARCHAR" property="loginId" />
+        <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+        <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+        <result column="SEX" jdbcType="NUMERIC" property="sex" />
+        <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+        <result column="MOBILE" jdbcType="VARCHAR" property="mobile" />
+        <result column="TELEPHONE" jdbcType="VARCHAR" property="telephone" />
+        <result column="STATE" jdbcType="NUMERIC" property="state" />
+        <result column="PWD_STATE" jdbcType="NUMERIC" property="pwdState" />
+        <result column="MEMO" jdbcType="VARCHAR" property="memo" />
+        <result column="REG_DATE" jdbcType="TIMESTAMP" property="regDate" />
+        <result column="UPDATE_DATE" jdbcType="TIMESTAMP" property="updateDate" />
+        <result column="CREATER_ID" jdbcType="NUMERIC" property="createrId" />
+        <result column="ORG_ID" jdbcType="VARCHAR" property="orgId" />
+    </resultMap>
+    <sql id="PureUser_Column_List">
+        USER_ID, LOGIN_ID, PASSWORD, USER_NAME, SEX, EMAIL, MOBILE, TELEPHONE, STATE, PWD_STATE, 
+        MEMO, REG_DATE, UPDATE_DATE, CREATER_ID, ORG_ID
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.math.BigDecimal" resultMap="PureUserResultMap">
+        select 
+        <include refid="PureUser_Column_List" />
+        from PURE_USER
+        where USER_ID = #{userId,jdbcType=NUMERIC}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal">
+        delete from PURE_USER
+        where USER_ID = #{userId,jdbcType=NUMERIC}
+    </delete>
+    <insert id="insertSelective" parameterType="com.stt.po.PureUser">
+        insert into PURE_USER
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                USER_ID,
+            </if>
+            <if test="loginId != null">
+                LOGIN_ID,
+            </if>
+            <if test="password != null">
+                PASSWORD,
+            </if>
+            <if test="userName != null">
+                USER_NAME,
+            </if>
+            <if test="sex != null">
+                SEX,
+            </if>
+            <if test="email != null">
+                EMAIL,
+            </if>
+            <if test="mobile != null">
+                MOBILE,
+            </if>
+            <if test="telephone != null">
+                TELEPHONE,
+            </if>
+            <if test="state != null">
+                STATE,
+            </if>
+            <if test="pwdState != null">
+                PWD_STATE,
+            </if>
+            <if test="memo != null">
+                MEMO,
+            </if>
+            <if test="regDate != null">
+                REG_DATE,
+            </if>
+            <if test="updateDate != null">
+                UPDATE_DATE,
+            </if>
+            <if test="createrId != null">
+                CREATER_ID,
+            </if>
+            <if test="orgId != null">
+                ORG_ID,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=NUMERIC},
+            </if>
+            <if test="loginId != null">
+                #{loginId,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=NUMERIC},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="telephone != null">
+                #{telephone,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=NUMERIC},
+            </if>
+            <if test="pwdState != null">
+                #{pwdState,jdbcType=NUMERIC},
+            </if>
+            <if test="memo != null">
+                #{memo,jdbcType=VARCHAR},
+            </if>
+            <if test="regDate != null">
+                #{regDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createrId != null">
+                #{createrId,jdbcType=NUMERIC},
+            </if>
+            <if test="orgId != null">
+                #{orgId,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.stt.po.PureUser">
+        update PURE_USER
+        <set>
+            <if test="loginId != null">
+                LOGIN_ID = #{loginId,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                PASSWORD = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="userName != null">
+                USER_NAME = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                SEX = #{sex,jdbcType=NUMERIC},
+            </if>
+            <if test="email != null">
+                EMAIL = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                MOBILE = #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="telephone != null">
+                TELEPHONE = #{telephone,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                STATE = #{state,jdbcType=NUMERIC},
+            </if>
+            <if test="pwdState != null">
+                PWD_STATE = #{pwdState,jdbcType=NUMERIC},
+            </if>
+            <if test="memo != null">
+                MEMO = #{memo,jdbcType=VARCHAR},
+            </if>
+            <if test="regDate != null">
+                REG_DATE = #{regDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateDate != null">
+                UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createrId != null">
+                CREATER_ID = #{createrId,jdbcType=NUMERIC},
+            </if>
+            <if test="orgId != null">
+                ORG_ID = #{orgId,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where USER_ID = #{userId,jdbcType=NUMERIC}
+    </update>
+</mapper>
