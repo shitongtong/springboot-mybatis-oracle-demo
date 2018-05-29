@@ -52,15 +52,4 @@ public class Demo extends BasePo {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
-
-    @Override
-    public String toString() {
-        return "Demo{" +
-                "id=" + id +
-                ", content='" + content + '\'' +
-                ", status=" + status +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                '}';
-    }
 }

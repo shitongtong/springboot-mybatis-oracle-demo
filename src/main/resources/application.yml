@@ -7,8 +7,16 @@ logging:
     config: classpath:logback.xml
 
 spring:
+  freemarker:
+    prefix:
+    suffix: .ftl
+    template-loader-path:
+      -  classpath:/templates/
+    charset: UTF-8
+    requestContextAttribute: rc
   profiles:
     active: ${spring.profiles.active}
+
 
 mybatis:
   mapper-locations: classpath:sqlmap/*.xml
