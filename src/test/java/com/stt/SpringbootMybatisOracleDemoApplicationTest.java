@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * 执行test，需设置jvm：-Dspring.profiles.active=dev
  * Created by shitt7 on 2018/5/25.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
